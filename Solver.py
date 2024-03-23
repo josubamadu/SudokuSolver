@@ -1,5 +1,6 @@
 import numpy as np
 import Helper
+import Review
 #import Gameboard
 
 PracticeGame = np.array([
@@ -42,22 +43,15 @@ def possibilityCheck(currentGame):
                 currentRow.append(None)
         CurrPossibilityBoard.append(currentRow)
 
-    for r in range(9):
-        CurrPossibilityBoard[r] = Helper.checkRowPossible(CurrPossibilityBoard[r])
-
-    for c in range(9):
-        col = []
-        for x in range(len(CurrPossibilityBoard)):
-            if CurrPossibilityBoard[x][c] != None:
-                col.append(CurrPossibilityBoard[x][c])
-            else:
-                col.append(None)
-        outputColumn = Helper.checkRowPossible(col)
-        for r in range(9):
-            CurrPossibilityBoard[r][c] = outputColumn[r]
+    # for r in range(9):
+    #     CurrPossibilityBoard[r] = Helper.checkRowPossible(CurrPossibilityBoard[r])
+    CurrPossibilityBoard = Review.rowReview(CurrPossibilityBoard)
+    CurrPossibilityBoard = Review.gridReview(CurrPossibilityBoard)
+    CurrPossibilityBoard = Review.colReview(CurrPossibilityBoard)
     Helper.boardPrint(CurrPossibilityBoard)
     return CurrPossibilityBoard
     
+
 
 def SolverStep(game):
     CurrGame = game

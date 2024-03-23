@@ -80,5 +80,10 @@ def reduction(u,currentSpan):
                         currentSpan[x] = l
     return currentSpan
 
-def checkGridPossible():
-    pass
+def checkGridPossible(grid):
+    u = []
+    for x in range(len(grid)):
+        if grid[x] != None:
+            u = u + grid[x]
+    
+    return reduction(u,grid)
