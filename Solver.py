@@ -1,19 +1,6 @@
 import numpy as np
 import Helper
 import Review
-#import Gameboard
-
-PracticeGame = np.array([
-    [8,3,4,None,5,2,None,None,None],
-    [7,None,None,9,8,None,3,None,None],
-    [None,9,6,3,None,None,8,5,1],
-    [9,None,None,4,7,1,6,8,None],
-    [None,1,5,8,2,None,None,7,None],
-    [None,8,None,None,None,5,None,3,None],
-    [3,7,8,None,None,9,5,4,None],
-    [1,4,2,None,None,8,None,None,None],
-    [None,6,9,7,3,None,None,1,None],
-])
 
 
 BlankGameBoard = np.zeros((9,9))

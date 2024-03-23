@@ -34,9 +34,9 @@ def update(c):
                 color = '#333333'
             centerVal = squareSideLength/2
             if ((x+1) % 3 == 0):
-                x1 = x1 - 1
+                x1 = x1 - 1.5
             if ((y+1) % 3 == 0):
-                y1 = y1 - 1
+                y1 = y1 - 1.5
             canvas_1.create_rectangle(x0,y0,x1,y1,fill=color,activefill="#cca300",outline='#ff4d4d')
             canvas_1.create_text(x0+centerVal,y0+centerVal,text=t,width=squareSideLength,justify="center",font=fontObj,fill="#ffffff")
 
@@ -62,8 +62,8 @@ window.title("Gameboard")
 fontObj = tkFont.Font(size=18)
 
 #hist = Solver.Solver(TestBoards.PracticeGameEasy)
-#hist = Solver.Solver(TestBoards.PracticeGameMedium)
-hist = Solver.Solver(TestBoards.PracticeGameHard)
+hist = Solver.Solver(TestBoards.PracticeGameMedium)
+#hist = Solver.Solver(TestBoards.PracticeGameHard)
 #print(hist)
 canvas_1 = tk.Canvas(window,width=windowWidth,height=windowHeight)
 canvas_1.pack()
