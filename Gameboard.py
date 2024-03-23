@@ -22,11 +22,23 @@ def update(c):
             y1 = y0 + squareSideLength
             if hist[c][y][x] != None:
                 t = hist[c][y][x]
+                if (0 <= (c-1)):
+                    if (hist[c-1][y][x] == None):
+                        color = '#008000'
+                    else:
+                        color = '#1a1a1a'
+                else:
+                    color = '#1a1a1a'
             else:
                 t = ""
+                color = '#333333'
             centerVal = squareSideLength/2
-            canvas_1.create_rectangle(x0,y0,x1,y1,fill="#fff0ff",activefill="#ffff00")
-            canvas_1.create_text(x0+centerVal,y0+centerVal,text=t,width=squareSideLength,fill="#000000",justify="center",font=fontObj)
+            if ((x+1) % 3 == 0):
+                x1 = x1 - 1
+            if ((y+1) % 3 == 0):
+                y1 = y1 - 1
+            canvas_1.create_rectangle(x0,y0,x1,y1,fill=color,activefill="#cca300",outline='#ff4d4d')
+            canvas_1.create_text(x0+centerVal,y0+centerVal,text=t,width=squareSideLength,justify="center",font=fontObj,fill="#ffffff")
 
 def next(c,max):
     global counter
